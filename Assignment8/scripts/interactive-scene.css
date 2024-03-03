@@ -1,0 +1,62 @@
+#interactive-scene{
+
+}
+
+#background{
+  position: absolute;
+  height: 350%;
+  z-index: -1;
+  opacity: 0.85;
+  /* animation: 12s rotate360 infinite linear; */
+  margin: -100%;
+}
+
+#character1{
+  
+  top: 10px;
+  padding: 5px;
+  z-index: 2;
+  animation: fadeInandUp 8s, grow 3.75s infinite alternate;
+  }
+
+
+#instruction-container{
+  position: relative;
+  /* background-color:#583759; */
+  background-color:#E6E6FA;
+  z-index: 1;
+  top: 100px;
+  left:10px;
+  width: 300px;
+  border-style: solid;
+  border-color: #95ABD0;
+  border-width: 4px;
+
+}
+
+#messageDisplay{
+  font-size: .65em;
+}
+
+#body{
+  background-color: black;
+  overflow:hidden;
+}
+
+html, body {height: 100%}
+
+/* animations */
+@keyframes rotate360 {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInandUp {
+    from { opacity : 0;
+           top : 2000px; }
+    to   { opacity : 1;
+           top: 10px; }
+}
+@keyframes grow {
+    from { transform : scale(.85);}
+    to   { transform : scale(1);}
+}

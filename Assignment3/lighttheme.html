@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <title>Temperature Converter Light</title>
+  <link rel="stylesheet" type="text/css" href="scripts/lighttempcheck.css" />
+  <link rel="stylesheet" type="text/css" href="scripts/nav.css" />
+  <nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="darktheme.html">Dark theme</a></li>
+    <li><a href="lighttheme.html">Light theme</a></li>
+  </ul>
+</nav>
+</head>
+
+<style>
+body {
+  background-color: #F2F2F2;
+  font-family: Arial, sans-serif;
+}
+</style>
+<body>
+  <h1 class="center">CSC 235: Web and Database Development<br></h1>
+  <p class="center">Ricardo Carneiro</p>
+  <p class="center">Computer Science Department</p>
+  <p class="center">February 20, 2023<br><font color = "#8080FF" style="text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Southern Connecticut State University</font></p>
+
+<div class="container">
+  <input type="text" id="temperature">
+  <select id="fromUnit">
+    <option value="Celsius">Celsius</option>
+    <option value="Fahrenheit">Fahrenheit</option>
+  </select>
+  <select id="toUnit">
+    <option value="Fahrenheit">Fahrenheit</option>
+    <option value="Celsius">Celsius</option>
+  </select>
+  <button onclick="convertTemperature()">Convert</button>
+  <div id="result"></div>
+</div>
+
+<script>
+function convertTemperature() {
+  let temperature = document.getElementById("temperature").value;
+  let fromUnit = document.getElementById("fromUnit").value;
+  let toUnit = document.getElementById("toUnit").value;
+  let result;
+
+  if (fromUnit == "Celsius" && toUnit == "Fahrenheit") {
+    result = (temperature * 9/5) + 32;
+  } else if (fromUnit == "Fahrenheit" && toUnit == "Celsius") {
+    result = (temperature - 32) * 5/9;
+  } else {
+    result = temperature;
+  }
+
+  document.getElementById("result").innerHTML = result + " " + toUnit;
+}
+</script>
+
+<div id="questions">
+  <h1>Questions?</h1>
+  <ul class="incremental">
+  <br><br><br><br><br><br><br><br><br>
+  <a class="email" href="mailto:carneiror1@southernct.edu">
+  <ul style=
+    "text-align: right;
+    font-family: Verdana,sans-serif;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">
+    carneiror1@southernct.edu</a><br>
+    <img class="right-side-image" src="images/scsu-logo-compact-blue.png"></ul>
+  </ul>
+</div>
+<footer id= "footer" style="background-color: black; color: white; text-align: center; padding: 10px;">
+      Copyright &copy; 2023 Ricardo Carneiro
+    </footer>
+</body>
+</html>

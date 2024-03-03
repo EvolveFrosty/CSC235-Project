@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Feedback Form</title>
+	<nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+	<style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 20px;
+        resize: vertical;
+      }
+      textarea {
+        height: 150px;
+      }
+      button[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      button[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      #feedback-list {
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: 30px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      #feedback-list p {
+        margin: 0;
+      }
+      #feedback-list hr {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Feedback Form</h1>
+    <form id="feedback-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br><br>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea><br><br>
+      
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="feedback-list">
+      <!-- Feedback entries will be displayed here -->
+    </div>
+
+    <script>
+      const form = document.querySelector('#feedback-form');
+      const feedbackList = document.querySelector('#feedback-list');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // Get the form data
+        const formData = new FormData(event.target);
+
+        // Create a new feedback entry
+        const feedback = {
+          name: formData.get('name'),
+          email: formData.get('email'),
+          message: formData.get('message')
+        };
+
+        // Add the feedback entry to the feedback list
+        const feedbackEntry = document.createElement('div');
+        feedbackEntry.innerHTML = `
+          <p><strong>Name:</strong> ${feedback.name}</p>
+          <p><strong>Email:</strong> ${feedback.email}</p>
+          <p><strong>Message:</strong> ${feedback.message}</p>
+          <hr>
+        `;
+        feedbackList.appendChild(feedbackEntry);
+
+        // Reset the form
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

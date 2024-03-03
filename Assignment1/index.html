@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="author" content="Phil Barello" />
+  <title>Presentation Template</title>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="scripts/slidy.css" /> <!-- http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css -->
+  <script src="scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script> <!-- http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js-->
+  <script src="scripts/jquery-3.3.1.min.js"
+    charset="utf-8" type="text/javascript"></script> <!-- https://code.jquery.com/jquery-3.3.1.min.js -->
+  <script type="text/javascript" src="scripts/qrcode.js"></script>
+  <script src="scripts/form.js"
+    charset="utf-8" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css"
+    href="scripts/form.css" />
+</head>
+
+<style>
+body {
+	background-color: yellow;
+	}
+img {
+    border-width: 2px;
+    border-style: solid;
+    border-color: red;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.caption-container {
+    position: relative;
+}
+
+.caption {
+   
+    background-color: black;
+    color: white;
+    padding: 2px;
+    width: 20%;
+}
+
+	
+  * {
+    box-sizing: border-box;
+  }
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .right-side-image {
+    float: right;
+    width: 300px;
+    border: 0px solid #004480;
+    padding: 10px;
+  }
+
+  .img {
+    float: left;
+  }
+
+  /* qrcode generator image size */
+  #qrcode {
+    width:160px;
+    height:160px;
+    margin-top:15px;
+  }
+
+  /* email link */
+  a.email:link {color:#eeff00;}
+  a.email:hover {color:#ff00ee; background:#66ff66;}
+  nav {
+  background-color: #333; /* Change the background color of the nav */
+}
+
+</style>
+<body>
+
+<div class="slide titlepage">
+  <h1 class="title">CSC 235: Web and Database Development<br></h1>
+  <p class="author">Ricardo Carneiro</p>
+  <p class="subtitle">Computer Science Department</p>
+  <p class="date">January 30, 2023<br><font color = "#8080FF" style="text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Southern Connecticut State University</font></p>
+  <button id="view-fullscreen">*</button>
+  <script type="text/javascript">
+    (function () {
+        var viewFullScreen = document.getElementById("view-fullscreen");
+        if (viewFullScreen) {
+            viewFullScreen.addEventListener("click", function () {
+                var docElm = document.documentElement;
+                if (docElm.requestFullscreen) {
+                    docElm.requestFullscreen();
+                }
+                else if (docElm.msRequestFullscreen) {
+                    docElm = document.body; //overwrite the element (for IE)
+                    docElm.msRequestFullscreen();
+                }
+                else if (docElm.mozRequestFullScreen) {
+                    docElm.mozRequestFullScreen();
+                }
+                else if (docElm.webkitRequestFullScreen) {
+                    docElm.webkitRequestFullScreen();
+                }
+            }, false);
+        }
+
+        var cancelFullScreen = document.getElementById("cancel-fullscreen");
+        if (cancelFullScreen) {
+            cancelFullScreen.addEventListener("click", function () {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+                else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                }
+                else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                }
+            }, false);
+        }
+
+        var fullscreenState = document.getElementById("fullscreen-state");
+        if (fullscreenState) {
+            document.addEventListener("fullscreenchange", function () {
+                fullscreenState.innerHTML = (document.fullscreenElement)? "" : "not ";
+            }, false);
+
+            document.addEventListener("msfullscreenchange", function () {
+                fullscreenState.innerHTML = (document.msFullscreenElement)? "" : "not ";
+            }, false);
+
+            document.addEventListener("mozfullscreenchange", function () {
+                fullscreenState.innerHTML = (document.mozFullScreen)? "" : "not ";
+            }, false);
+
+            document.addEventListener("webkitfullscreenchange", function () {
+                fullscreenState.innerHTML = (document.webkitIsFullScreen)? "" : "not ";
+            }, false);
+        }
+
+    })();
+    </script>
+</div>
+<div class="section slide level1">
+  <h1>Where have I <i>been</i>?</h1>
+   <ul>
+    <li><a href="https://lh3.googleusercontent.com/p/AF1QipOP0PtTg1Qkup4CUz_Q1vVu-F751fG_mBuMyxU-=s680-w680-h510">Housatonic Community College</a></li>
+    <li><a href="https://s.hdnux.com/photos/01/17/65/16/20927360/18/rawImage.jpg">University of Bridgeport</a></li>
+  </ul>
+</div>
+<div class="section slide level1">
+  <h1>Where am I <i>now</i>?</h1>
+  <ul>
+  <li><a href="https://www.southernct.edu/sites/default/files/scsu_15_campus-9499f.jpg">Southern Connecticut State University</a></li>
+  </ul>
+  <div class="caption-container">
+  <img src="images/friends.PNG" alt="Friends" style="width:300px;height:400px;">
+  <div class="caption">Undefeated soccer season</div>
+  <div class="caption-container">
+  <img src="images/me.JPG" alt="Mascot" style="width:300px;height:400px;">
+  <div class="caption">Ottis and I at Jess Dow Field</div>
+</div>
+</div>
+</div>
+<div class="section slide level1">
+  <h1>What is the <i>plan</i>...</h1>
+  <ol class="incremental" style="list-style-type: decimal">
+  <li><p>Graduate</p></li>
+  <li><p>Find my dream job</p></li>
+  <li><p>Help others with my experience</p></li>
+  </ol></li>
+</div>
+<div class="section slide level1">
+  <h1>Pros, cons, interests of <i>mine</i>:</h1>
+  <p> Based on this assignment I can tell my strenght is content and style. I want to improve on 
+ javascript and learn more about the functions of it. I'm familiar with the basics of HTML and CSS, but in the reading I 
+ can see there are much more complex topics that goes into web development. I'm interested in all 
+ of them and can't wait to learn more.</p>
+</div>
+<div class="section slide level1">
+  <div id="References">
+  <h2>References</h2>
+  <ul>
+    <li>Barello, P. (n.d.). Presentation Template. Retrieved from https://167.99.253.247/csc235/carneiror1/template.html#(1) </li>
+    <li>SCSU Campus. Southern Connecticut State University. (n.d.). Retrieved February 6, 2023, from https://www.southernct.edu/ </li>
+    <li>University of Bridgeport - an accredited university in Connecticut. A Leading University in Connecticut | University of Bridgeport. (n.d.). Retrieved February 6, 2023, from https://www.bridgeport.edu/ </li>
+	<li>Welcome to Housatonic Community College!! Welcome to Housatonic Community College. (n.d.). Retrieved February 6, 2023, from https://www.housatonic.edu/ </li>
+  </ul>
+</div>
+</div>
+<div class="section slide level1">
+  <h1>Important Topic</h1>
+  <img src="https://geology.illinois.edu/sites/default/files/styles/large/public/2020-01/geo%20figure.png?itok=6cTFStDS" style="width:400px;height:300px;" class="center">
+  <div class="center">These topics make up geology as a whole</div>
+  <p> This was an option for me to take as an elective and it quickly became interesting to me. 
+  Hands on labs are always fun to do and just learning about something other than computers 
+  refreshes my brain.</p>
+  <ul>
+    <li><a href="https://geology.illinois.edu/admissions/why-study-geology" target="_blank">Why study geology continued...</a></li>
+  </ul>
+</div>
+<div class="section slide level1">
+  <h1>Where to go to learn about GEO 201?</h1>
+  <img src="https://www.southernct.edu/sites/default/files/media-images/2022-12/SCSU-Map-4.png" style="width:600px;height:400px;" class="center">
+  <div class="center">SCSU Campus</div>
+  <ul>
+    <li><a href="https://www.southernct.edu/academics/earth-science" target="_blank">SCSU Department of Earth Science</a></li>
+	<li><a href="https://www.southernct.edu/campus-map" target="_blank">SCSU Campus Interactive Map</a></li>
+  </ul>
+  <p>Southern Connecticut Earth Science Department can be located in the Academic Science Building in room 108A.</p>
+</div>
+<div class="section slide level1">
+  <h1>Simple Form</h1>
+  <form>
+  <table>
+   <tr>
+    <td>Name :</td>
+    <td><input id= "name" type="text"></td>
+   </tr>
+   <tr>
+    <td>Gender :</td>
+    <td>
+     <input id= "gender" type="radio" name="Gender"> Male
+     <input type="radio" name="Gender"> Female
+    </td>
+   </tr>
+   <tr>
+    <td>Message:</td>
+    <td>
+   <textarea id="message" name="message"></textarea><br><br>
+    </td>
+   </tr>
+   <tr>
+    <td>Email :</td>
+    <td><input id= "email" type="email"></td>
+   </tr>
+   <tr>
+    <td>Phone#:</td>
+    <td>
+     <select>
+      <option>203</option>
+      <option>475</option>
+      <option>860</option>
+     </select>
+     <input id= "phone" type="phone">
+    </td>
+   </tr>
+   <tr>
+    <td><input type="submit" value="Submit"></td>
+   </tr>
+  </table>
+ </form>
+<p>This is a basic non-working form. Still need to figure out a way to make it interactive and responsive.
+I think it needs to be server sided and have some PHP to be able to receive submissions to my email, but I'm not sure.</p>
+</div>
+<div class="section slide level1" id="questions">
+  <h1>Questions?</h1>
+  <ul class="incremental">
+  <br><br><br><br><br><br><br><br><br>
+  <a class="email" href="mailto:carneiror1@southernct.edu">
+  <ul style=
+    "text-align: right;
+    font-family: Verdana,sans-serif;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">
+    carneiror1@southernct.edu</a><br>
+    <img class="right-side-image" src="images/scsu-logo-compact-blue.png"></ul>
+  </ul>
+</div>
+</body>
+</html>

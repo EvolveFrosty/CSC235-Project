@@ -1,0 +1,103 @@
+body {
+        background-color: gray;
+        color: black;
+        font-family: Arial, sans-serif;
+    }
+
+    #registrationForm {
+        max-width: 500px;
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[list] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 20px;
+    }
+
+    input[type="submit"] {
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: darkred;
+    }
+
+    input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+    #Rules {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    #Rules td {
+        padding: 0;
+    }
+
+    #Rules h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    #Rules td:first-child {
+        text-align: left;
+    }
+
+    #Rules td:last-child {
+        text-align: center;
+    }
+
+    #Rules td:last-child input[type="submit"] {
+        margin-top: 30px;
+    }
+	nav {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+ 
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+
+  
+  nav a:hover {
+    color: red;
+  }

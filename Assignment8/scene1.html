@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boxing Arena</title>
+  <link rel="icon" href="images/boxing.jpg" sizes="16x16" type="image/png">
+  <link rel="stylesheet" type="text/css" href="scripts/www-presentation.css"/>
+  <link rel="stylesheet" type="text/css" href="scripts/interactive-scene.css"/>
+  <link rel="stylesheet" href="scripts/bootstrap.min.css">
+  <link rel="stylesheet" href="scripts/animate.css">
+  <link rel="stylesheet" type="text/css" href="nav.css">
+  <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+</head>
+<body>
+
+  <div id="interactive-scene">
+    <img id="background" src="https://wallpaperaccess.com/full/1758094.jpg">
+
+    <audio id="background-audio" src="audio/boxing.mp3"></audio>
+
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/popper.js" charset="utf-8" type="text/javascript"></script>
+    <script src="scripts/interactive-scene.js" charset="utf-8" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('[data-toggle="popover"]').popover({
+          html : true,
+          content : function() {
+            return $('#messageDisplay').html();
+          }
+        });
+      });
+
+      function playAudio() {
+        var audio = document.getElementById("background-audio");
+        audio.play();
+      }
+
+      function displayMessage() {
+        playAudio(); // Call the playAudio() function when displaying the message
+      }
+
+      function toggleMute() {
+        var audio = document.getElementById("background-audio");
+        audio.muted = !audio.muted;
+        var muteButton = document.getElementById("mute-button");
+        if (audio.muted) {
+          muteButton.innerHTML = "Unmute";
+        } else {
+          muteButton.innerHTML = "Mute";
+        }
+      }
+    </script>
+
+    <div id="instruction-container" class="animated fadeInLeft 5s">
+      <h1 style="color:white; text-shadow: 2px 2px 4px #000000; text-shadow: 2px 2px 5px orange;">The Fight of the Year</h1>
+      <ul>
+        <p id="instructions-for-use" style="color:purple;text-shadow: 2px 2px 5px white;"><i>Click on card for more information</i></p>
+      </ul>
+    </div>
+
+    <div id="messageDisplay" hidden></div>
+
+    <center><br>
+      <img id="character1" src="https://www.premierboxingchampions.com/sites/default/files/04.22_1920x1080_PPVLink_web.jpg" class="animated fadeInUpBig" onclick="displayMessage()" data-toggle="popover" data-placement="center" title="<center><-- Ryan vs Tank --></center>" data-content-wrapper="#messageDisplay">
+    </center>
+
+    <div id="audio-control-container">
+      <button id="mute-button" onclick="toggleMute()">Mute/Unmute</button>
+    </div>
+  </div>
+</body>
+</html>

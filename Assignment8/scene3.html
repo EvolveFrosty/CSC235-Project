@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="https://www.pngkit.com/png/detail/385-3851516_try-your-luck-try-your-luck-png.png" sizes="16x16" type="image/png">
+  <link rel="stylesheet" type="text/css" href="nav.css">
+
+<nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+	<title>Try Your Luck Game</title>
+<style>
+body {
+	background-image: url('https://media.giphy.com/media/uNnAUNvCiCzPLz7XVJ/giphy.gif');
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: Arial, sans-serif;
+	text-align: center;
+}
+
+h1 {
+	font-size: 36px;
+	margin-top: 50px;
+}
+
+p {
+	font-size: 24px;
+	margin-top: 30px;
+}
+
+img {
+	margin-top: 30px;
+	max-width: 400px;
+}
+
+button {
+	background-color: #ff9900;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 24px;
+	margin-top: 30px;
+	cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+	<h1>Try Your Luck Game</h1>
+	<p>Click the button to see if you're lucky today!</p>
+	<button id="button">Click Me!</button>
+	<audio id="audio" src="audio/lucky.mp3"></audio>
+<script>
+const button = document.getElementById('button');
+const audio = document.getElementById('audio');
+
+button.addEventListener('click', function() {
+	const randomNumber = Math.floor(Math.random() * 10) + 1;
+
+	if (randomNumber === 7) {
+		alert('Congratulations! You are lucky today!');
+		audio.play(); // plays the audio
+	} else {
+		alert('Sorry, try again tomorrow!');
+	}
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="https://www.logolynx.com/images/logolynx/fc/fca44e385881389ede30e3163d65a73e.jpeg" sizes="16x16" type="image/png">
+    <title>Truth or Dare</title>
+	<nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+    <style>
+      body {
+		background-image: url('https://media.giphy.com/media/6Ej1xnrPewWCA/giphy.gif');
+		background-size: cover;
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        padding-top: 50px;
+      }
+      button {
+        font-size: 36px;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: red;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #16a085;
+      }
+	  h1, p {
+			color: white;
+			text-align: center;
+			text-shadow: 2px 2px #000000;
+		}
+    </style>
+  </head>
+  <body>
+    <h1>Truth or Dare</h1>
+    <p>Click either "Truth" or "Dare" to play!</p>
+    <button id="truthButton">Truth</button>
+    <button id="dareButton">Dare</button>
+	
+	<audio id="backgroundAudio" loop>
+		<source src="audio/horror.mp3" type="audio/mp3">
+	</audio>
+
+    <script>
+      var truthList = [
+        "What is the most embarrassing thing that has ever happened to you?",
+        "What is the craziest thing you have ever done?",
+        "Have you ever lied to your best friend, and what was it about?",
+        "What is your biggest fear?",
+        "What is the most annoying thing about you?",
+      ];
+
+      var dareList = [
+        "Do 10 push-ups right now!",
+        "Call your crush and tell them how you feel!",
+        "Go outside and shout 'I love ice cream!' as loud as you can!",
+        "Do an impression of a famous celebrity!",
+        "Sing a song in public!",
+      ];
+
+      function getRandomIndex(array) {
+        return Math.floor(Math.random() * array.length);
+      }
+
+      function playTruth() {
+        var randomTruthIndex = getRandomIndex(truthList);
+        var randomTruth = truthList[randomTruthIndex];
+        alert("Your truth question is: " + randomTruth);
+      }
+
+      function playDare() {
+        var randomDareIndex = getRandomIndex(dareList);
+        var randomDare = dareList[randomDareIndex];
+        alert("Your dare is: " + randomDare);
+      }
+
+      var truthButton = document.getElementById("truthButton");
+      truthButton.addEventListener("click", playTruth);
+
+      var dareButton = document.getElementById("dareButton");
+      dareButton.addEventListener("click", playDare);
+	  
+	  var backgroundAudio = document.getElementById("backgroundAudio");
+	  backgroundAudio.play();
+    </script>
+  </body>
+</html>

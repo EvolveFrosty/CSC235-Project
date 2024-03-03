@@ -1,0 +1,92 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="scripts/form.css" />
+<nav class= "navbar">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+  </ul>
+</nav>
+</head>
+<body>
+    <center>
+      <h1>CSC 235 Registration Form</h1>
+      <form id="registrationForm">
+        <table>
+          <tr>
+            <td><br>Full-Name:</td>
+            <td><br><input type="text" name="Name"></td>
+          </tr>
+          <tr>
+            <td><br>E-mail:</td>
+            <td><br><input type="email" name="Mail" required="required"></td>
+          </tr>
+          <tr>
+            <td><br>Choose a topic:</td>
+            <td><br>
+              <input list="choice" name="source">
+              <datalist id="choice">
+                <option>MAT</option>
+                <option>ACC</option>
+				<option>BIS</option>
+				<option>GEO</option>
+              </datalist>
+            </td>
+          </tr>
+        </table>
+        <table id="Rules">
+          <tr>
+            <center>
+              <td>
+                <h2><br>Rules</h2>
+              </td>
+            </center>
+          </tr>
+          <tr>
+            <td><br>1. This webpage is available to everyone</td>
+          </tr>
+          <tr>
+            <td><br>2.You promise NOT to use data on this webpage for any illegal or fraudulent activities</td>
+          </tr>
+		  <tr>
+            <td><br>3. You love this class</td>
+          </tr>
+          <tr>
+            <td><br><input type="checkbox" name="rule" required="required">I have read, understood, and accepted the rules for membership.</td>
+          </tr>
+          <tr>
+            <td><br><input type="submit" name="submit button" required="required"></td>
+          </tr>
+        </table>
+      </form>
+    </center>
+
+    <script>
+      const form = document.getElementById('registrationForm');
+      const url = 'https://167.99.253.247/csc235/carneiror1/Assignment4/form.html';
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('POST', url);
+        xhr.send(formData);
+
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              alert('Form submitted successfully! Welcome to CSC 235, I am Ricardo Carneiro');
+              form.reset();
+            } else {
+              alert('Error submitting form. Please try reach out to carneiro1@southernct.edu.');
+            }
+          }
+        };
+      });
+    </script>
+	<footer id= "footer" style="background-color: black; color: white; text-align: center; padding: 10px;">
+      Copyright &copy; 2023 Ricardo Carneiro
+    </footer>
+  </body>
+</html>

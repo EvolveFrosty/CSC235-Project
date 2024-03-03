@@ -1,0 +1,14 @@
+#rotatingImage {
+    left:100px;
+    border-spacing: 0;
+    /*transition: all 5s ease;*/
+}
+
+#colorChangingImage {
+    background-color: #FFFFFF; // default color;
+    /* see https://www.w3.org/wiki/CSS/Properties/color/keywords#Basic_Colors for more color codes */
+}
+
+/* email link */
+a.email:link {color:#eeff00;}
+a.email:hover {color:#ff00ee; background:#66ff66;}

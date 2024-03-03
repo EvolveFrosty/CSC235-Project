@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ricardo's Yahtzee Game</title>
+	<nav class= "navbar">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="Yahtzee.html">Restart Game</a></li>
+		</ul>
+	</nav>
+		<script type="text/javascript" src="Yahtzee.js"></script>
+		<link rel="stylesheet" type="text/css" href="Yahtzee.css">
+		<link rel="stylesheet" type="text/css" href="nav.css" />
+	</head>
+	<body>
+		Total Score: <span id="totalScore">0</span>
+
+		<br />
+		<br />
+
+		<span id="0" class="dice">0</span>
+		<span id="1" class="dice">0</span>
+		<span id="2" class="dice">0</span>
+		<span id="3" class="dice">0</span>
+		<span id="4" class="dice">0</span> <!-- 5 Dice -->
+		
+		<button id="roll">Roll</button>
+
+		<br />
+		<br />
+		
+		<input type="checkbox" id="hold0"></input>
+		<input type="checkbox" id="hold1"></input>
+		<input type="checkbox" id="hold2"></input>
+		<input type="checkbox" id="hold3"></input>
+		<input type="checkbox" id="hold4"></input> 
+		Hold Dice
+
+		<br />
+		<br />
+
+		<table id="yahtzeeTable">
+			<tr>
+				<th>Category</th>
+				<th>Score</th>
+			</tr>
+			<tr>
+				<td id="ones" class="cell">Ones</td>
+				<td id="onesScore">-</td>
+			</tr>
+			<tr>
+				<td id="twos" class="cell">Twos</td>
+				<td id="twosScore">-</td>
+			</tr>
+			<tr>
+				<td id="threes" class="cell">Threes</td>
+				<td id="threesScore">-</td>
+			</tr>
+			<tr>
+				<td id="fours" class="cell">Fours</td>
+				<td id="foursScore">-</td>
+			</tr>
+			<tr>
+				<td id="fives" class="cell">Fives</td>
+				<td id="fivesScore">-</td>
+			</tr>
+			<tr>
+				<td id="sixes" class="cell">Sixes</td>
+				<td id="sixesScore">-</td>
+			</tr>
+			<tr>
+				<td id="threeOfAKind" class="cell">Three Of a Kind</td>
+				<td id="threeOfAKindScore">-</td>
+			</tr>
+			<tr>
+				<td id="fourOfAKind" class="cell">Four Of a Kind</td>
+				<td id="fourOfAKindScore">-</td>
+			</tr>
+			<tr>
+				<td id="yahtzee" class="cell">Yahtzee</td>
+				<td id="yahtzeeScore">-</td>
+			</tr>
+		</table>
+	</body>
+	<footer id= "footer" style="background-color: black; color: white; text-align: center; padding: 10px;">
+      Copyright &copy; 2023 Ricardo Carneiro
+    </footer>
+</html>

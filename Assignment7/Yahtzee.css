@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.dice {
+    display: inline-block;
+    margin: 10px;
+    font-size: 48px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.held {
+    background-color: lightgray;
+}
+#hold0,
+#hold1,
+#hold2,
+#hold3,
+#hold4 {
+  margin-right: 10px;
+}
+
+.cell {
+    text-align: left;
+}
+.cell:hover {
+  cursor: pointer;
+}
+
+#yahtzeeTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#yahtzeeTable th {
+    background-color: black;
+    color: white;
+    text-align: left;
+}
+
+#yahtzeeTable td, #yahtzeeTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#yahtzeeTable tr:nth-child(even){background-color: #f2f2f2;}
