@@ -1,0 +1,45 @@
+header {
+background-color: red;
+color: white;
+text-align: center;
+padding: 10px;
+}
+
+h1 {
+font-size: 48px;
+}
+
+section {
+margin: 30px;
+}
+
+video {
+display: block;
+margin: 0 auto;
+max-width: 100%;
+}
+
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+li {
+margin-bottom: 15px;
+}
+
+a {
+color: #ffcc33;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+footer {
+  background-color: red;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <nav class= "navbar">
+  <ul>
+    <li><a href="index.html">Back to Home</a></li>
+  </ul>
+</nav>
+    <title>My Presentation</title>
+    <style>
+      /* Style for the slide container */
+      .slide {
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+
+      /* Style for the active slide */
+      .slide.active {
+        display: block;
+      }
+
+      /* Style for the slide content */
+      .slide h1 {
+        font-size: 48px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .slide p {
+        font-size: 24px;
+        text-align: center;
+      }
+
+      /* Style for the previous/next slide buttons */
+      .button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+      }
+	  .button.prev {
+  left: 20px;
+  background-color: #333;
+}
+
+.button.next {
+  right: 20px;
+  background-color: #333;
+}
+
+      .button:hover {
+        background-color: #555;
+      }
+	  .pic {
+        text-align: center;
+      }
+	  img {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="button prev">&larr; Previous</div>
+      <div class="button next">Next &rarr;</div>
+    <div class="slide">
+      <h1>How can HTML, CSS and JavaScript be integrated in my topic?</h1>
+      <p>HTML, CSS and JavaScript go hand in hand with one another. For example in this presentation I have all 3 working together and this is the outcome.</p>
+	  <div>I have:</div>
+  <ul>
+    <li>HTML - Responsible for the webpage code.</li>
+	<li>CSS - Responsible for the style and how the webpage looks.</li>
+	<li>JavaScript - Responsible for the slideshow script.</li>
+</ul>
+    </div>
+    <div class="slide">
+      <h1>How is SSL, HTTPS and SFTP related to my presentation?</h1>
+	 <p>Notice how it says "Not Secure", that means the certificate is not valid, which means the website is vulnerable and having things such as credit card information or any private information can be stolen.
+	 However, since this is just for school, I doubt anyone will have any problems with that. Brings me to another point. We use FileZilla which is a free tool which we securely transfer, access and manage our data
+where our professor and teammates can see our progress in! It's also where our CSC 235 web server is in and how we can share a whole website through 1 simple link.</p>
+<div class="pic">
+     <img src="ssl.PNG" alt="Certificate Invalid">
+    </div>
+	</div>
+    <div class="slide">
+      <h1>Do you recognize any opportunities for integrating a database to enhance your web presentation?</h1>
+      <p>For this presentation in particular, I feel like a database would make no sense since I'm answering simple 
+	  questions. However, for future reference I think implementing a database where users can lets say order a phone or a car and it pulls it from a database
+	  and outputs in stock or out of stock would be nice. PHP and SQL would be required so I would have to do a little more
+	  digging to learn how to put it all together.</p>
+    </div>
+	<div class="slide">
+      <h1>This is my Assignment 3, how can I improve considering the learning outcomes outline in CSC 235 syllabus?</h1>
+	  <ul>
+    <li><a href="../Assignment3/index.html">Assignment 3</a></li>
+  </ul>
+    </div>
+    
+    <script>
+      
+      var slides = document.querySelectorAll(".slide");
+
+      
+      slides[0].classList.add("active");
+
+      
+      var slideIndex = 0;
+
+      
+      function showSlide() {
+        
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].classList.remove("active");
+        }
+        
+        slides[slideIndex].classList.add("active");
+      }
+
+      
+      function prevSlide() {
+        slideIndex--;
+        if (slideIndex < 0) {
+          slideIndex = slides.length - 1;
+        }
+        showSlide();
+      }
+
+      
+      function nextSlide() {
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+          slideIndex = 0;
+        }
+        showSlide();
+      }
+
+      
+      document.querySelector(".prev").addEventListener("click", prevSlide);
+      document.querySelector(".next").addEventListener("click", nextSlide);
+    </script>
+  </body>
+
+</html>
